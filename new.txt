@@ -1,0 +1,36 @@
+1. true false with usestase 
+
+2. map 
+
+3. type 
+
+4. fetch 
+const getProducts = async (): Promise<CartItemType[]> => {
+  let res = await fetch("https://fakestoreapi.com/products");
+  return res.json();
+};
+
+5. styled components with nested style
+
+6. React FC with props 
+
+//types
+type Props = {
+  cartItems: CartItemType[];
+  addToCart: (clickedItem: CartItemType) => void;
+  removeFromCart: (id: number) => void;
+};
+
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
+  return (
+    <CartWrapper>
+      {cartItems.length === 0 ? <p>No items in cart. </p> : null}
+      {cartItems.map((item) => (
+        <CartItem />
+      ))}
+    </CartWrapper>
+  );
+};
+export default Cart;
+
+7. 
